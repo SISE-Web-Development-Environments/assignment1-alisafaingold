@@ -206,7 +206,10 @@
                         - that all, sites are static. </br>
                         <u>Technologies:</u>Core web protocols: HTML, HTTP and URI, very little css </br>
                         <u>Example:</u> <a href="http://info.cern.ch/">The First Website</a> </br>
-                        <u>Action For Search:</u> </br>
+                        <u>Action For Search:</u> Enter your favorite search engine (for example, Google), type the query,
+                        if there is a site that answers the query you can log in and view the information. You can't leave a comment,
+                        if there is any link in the site it's probably irrelevant to the subject matter, and more about making friendly suggestions.
+                        </br>
                     </p>
                     <h4>Web 2.0 </h4>
                     <p class="font-italic">
@@ -220,13 +223,17 @@
                     </p>
                     <p>
                         <u>Range Of Years:</u> From 2006 to 2016</br>
-                        <u>In My Own Words:</u> Web 3.0 is a web which defined as "read-write" web- the users
+                        <u>In My Own Words:</u> Web 3.0 is a web which defined as "read-write" web - the users
                         can freely interact with the web users or publishers. They can leave their comments, reviews, share video, photos and
                         posting.
                         </br>
-                        <u>Technologies:</u> RSS, SDK, APIs, Machine readable forMat (XML, JSON), AJAX applications, Asynchronous JavaScript. </br>
+                        <u>Technologies:</u> RSS, Flash, SDK, APIs, Machine Readable Format (XML, JSON), AJAX applications, Asynchronous JavaScript. </br>
                         <u>Example:</u><a href="https://en.wikipedia.org/wiki/Wiki"> Wiki Page</a></br>
-                        <u>Action For Search:</u> </br>
+                        <u>Action For Search:</u> Now you can go to the site and see people's comment about the Acamol's side effects,
+                        you will get links to people's sites and maybe for a personal blog of someone who thinks the whole drug industry is a conspiracy.
+                        You will also find YouTube videos explaining how to take the medicine responsibly,
+                        and all the interaction with the browser will be much more convenient, designed, and inviting to action.
+                        </br>
                     </p>
                     <h4>Web 3.0 </h4>
                     <p class="font-italic">
@@ -242,9 +249,10 @@
                         In addition, in web 3.0 the services show different views for the same web/the same data and it focus on personalization.</br>
                         <u>Technologies: </u>SaaS Business Model, Open Source Software Platform, Intelligent Web, Recommendation Systems</br>
                         <u>Example:</u><a href="https://www.apple.com/siri/"> Apple's Siri</a> </br>
-                        <u>Action For Search:</u> </br>
+                        <u>Action For Search:</u> Your browser will save the search and you will now receive advertisements for other medicines similar to Acamol.
+                        Your personal assistant will ask you if you are feeling well, and what side effects you are experiencing
+                        and will allow you to schedule a consultation with a doctor.</br>
                     </p>
-
                 </div>
             </div>
 
@@ -262,8 +270,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="name">Your Name</label>
-                        <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4"
-                               data-msg="Please enter at least 4 chars"/>
+                        <input type="text" name="name" class="form-control" id="name"/>
                         <div class="validate"></div>
                     </div>
                     <div class="form-group col-md-6">
@@ -275,18 +282,19 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Subject</label>
-                    <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4"
-                           data-msg="Please enter at least 8 chars of subject"/>
+                    <input type="text" class="form-control" name="subject" id="subject"/>
                     <div class="validate"></div>
                 </div>
                 <div class="form-group">
                     <label for="name">Message</label>
-                    <textarea class="form-control" name="message" rows="10" data-rule="required"
-                              data-msg="Please write something for us"></textarea>
+                    <textarea class="form-control" id="message1" rows="10" value=""></textarea>
                     <div class="validate"></div>
                 </div>
                 <div class="text-center">
-                    <button type="submit">Send Message</button>
+                    <button type="submit" name="submit" onclick="function addSmile() {
+                        document.getElementById('message1').value +='&#127803';
+                    }
+                    addSmile()">Send Message</button>
                 </div>
             </form>
         </div>
