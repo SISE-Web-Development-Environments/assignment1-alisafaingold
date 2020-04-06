@@ -3,62 +3,74 @@
 --------------------------------------------------------------*/
 body {
 	font-family: "Open Sans", sans-serif;
-	color: #272829;
+	color: #777;
 }
 
 a {
-	color: #149ddd;
+	color: #43aea0;
 }
 
 a:hover {
-	color: #37b3ed;
+	color: #00d3b8;
 	text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Raleway", sans-serif;
+h1, h2, h3, h4, h5, h6, .font-primary {
+	font-family: "Lato", sans-serif;
+    direction: rtl;
 }
+
 
 /*--------------------------------------------------------------
 # Header + nav-menu
 --------------------------------------------------------------*/
 #header {
-    height: 72px;
-    transition: all 0.5s;
-    z-index: 997;
-    transition: all 0.5s;
-    padding: 15px 0;
-    background: #000;
+	height: 80px;
+	transition: all 0.5s;
+	z-index: 997;
+	transition: all 0.5s;
+	padding: 20px 0;
+	background: #2d6760;
 }
 
+#header.header-scrolled {
+	background: #1d443f;
+	height: 60px;
+	padding: 10px 0;
+}
+
+
 #header .logo h1 {
-    font-size: 30px;
-    margin: 0;
-    padding: 6px 0;
-    line-height: 1;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+	font-size: 30px;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	font-weight: 700;
+	letter-spacing: 1px;
 }
 
 #header .logo h1 a, #header .logo h1 a:hover {
-    color: #fff;
-    text-decoration: none;
+	color: #fff;
+	text-decoration: none;
 }
 
 #header .logo img {
-    padding: 0;
-    margin: 0;
-    max-height: 40px;
+	padding: 0;
+	margin: 0;
+	max-height: 40px;
 }
 
-@media (max-width: 992px) {
-    #header {
-        height: 60px;
-        padding: 8px 0;
-    }
+
+@media (max-width: 768px) {
+	#header .logo h1 {
+		font-size: 28px;
+		padding: 8px 0;
+	}
 }
 
+#main {
+	margin-top: 80px;
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -72,172 +84,235 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu > ul > li {
     position: relative;
     white-space: nowrap;
-    float: left;
+    float: right;
 }
 
 .nav-menu a {
-    display: block;
-    position: relative;
-    color: #a8a9b4;
-    padding: 12px 15px;
-    margin-bottom: 8px;
-    transition: 0.3s;
-    font-size: 15px;
-    /*font-family: "Open Sans", sans-serif;*/
+	display: block;
+	position: relative;
+	color: #d2ece9;
+	padding: 10px 15px;
+	transition: 0.3s;
+	font-size: 14px;
+	font-family: "Open Sans", sans-serif;
 }
-
-.nav-menu > ul > li + li {
-    margin-left: 30px;
-}
-
-.nav-menu > ul > li > a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 3px;
-    left: 0;
-    background-color:  #149ddd;
-    visibility: hidden;
-    width: 0px;
-    transition: all 0.3s ease-in-out 0s;
-}
-
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-    color: #149ddd;
+	color: #9cd5ce;
+	text-decoration: none;
+}
+
+.nav-menu .ul {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: calc(100% - 30px);
+	z-index: 99;
+	opacity: 0;
+	visibility: hidden;
+	padding: 10px 0;
+	background: #fff;
+	box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+	transition: ease all 0.3s;
 }
 
 
+.nav-menu .li {
+	min-width: 180px;
+	position: relative;
+}
 
+.nav-menu .ul a {
+	padding: 10px 20px;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: none;
+	color: #25564f;
+}
 
+.nav-menu .ul a:hover, .nav-menu .ul .active > a, .nav-menu .ul li:hover > a {
+	color: #70b9b0;
+}
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+	width: 100%;
+	height: 75vh;
+	background: url("images/mom/background.jpg") top center;
+	background-size: cover;
+	position: relative;
+	margin-bottom: -80px;
+}
+
+#hero:before {
+	content: "";
+	background: rgba(112, 185, 176, 0.85);
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+#hero .hero-container {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	padding-top: 80px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+#hero h1 {
+	margin: 0 0 10px 0;
+	font-size: 48px;
+	font-weight: 300;
+	line-height: 56px;
+	color: #fff;
+}
+
+#hero h2 {
+	color: #eee;
+	margin-bottom: 50px;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+#hero .btn-get-started {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 8px 28px 10px 28px;
+	border-radius: 50px;
+	transition: 0.5s;
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+#hero .btn-get-started:hover {
+	background: #fff;
+	color: #70b9b0;
+	border: 1px solid #70b9b0;
+}
+
+@media (min-width: 1024px) {
+	#hero {
+		background-attachment: fixed;
+	}
+}
+
+@media (max-width: 768px) {
+	#hero h1 {
+		font-size: 28px;
+		line-height: 36px;
+	}
+	#hero h2 {
+		font-size: 18px;
+		line-height: 24px;
+		margin-bottom: 30px;
+	}
+}
 
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
 section {
 	padding: 60px 0;
-	overflow: hidden;
 }
 
 .section-bg {
-	background: #f5f8fd;
+	background-color: #f2f9f8;
 }
 
 .section-title {
-    padding-top: 10px;
+	text-align: center;
+	padding-bottom: 30px;
+    direction: rtl;
 }
 
 .section-title h2 {
 	font-size: 32px;
-	font-weight: bold;
+	font-weight: 300;
 	margin-bottom: 20px;
-	padding-bottom: 20px;
-	position: relative;
-	color: #173b6c;
-}
-
-.section-title h2::after {
-	content: '';
-	position: absolute;
-	display: block;
-	width: 50px;
-	height: 3px;
-	background: #149ddd;
-	bottom: 0;
-	left: 0;
+	padding-bottom: 0;
+	color: #555;
 }
 
 .section-title p {
-	margin-bottom: 10px;
+	margin-bottom: 0;
 }
 
 
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.about .content h3 {
-	font-weight: 700;
+.about h3 {
+	font-weight: 400;
 	font-size: 26px;
-	color: #173b6c;
 }
 
-
-.about .content p:last-child {
+.about p:last-child {
 	margin-bottom: 0;
-}
-
-.about .image{
-	padding-bottom: 30px;
 }
 
 /*--------------------------------------------------------------
 # Photos
 --------------------------------------------------------------*/
-.photos .portfolio-item {
-	margin-bottom: 30px;
+.photos {
+	padding: 60px 0;
 }
 
-.photos .portfolio-wrap::before {
-	content: "";
-	background: rgba(255, 255, 255, 0.5);
+.photos .portfolio-item {
+	background: #073839;
+	overflow: hidden;
+	min-height: 200px;
+	position: relative;
+	border-radius: 4px;
+	margin: 0 0 30px 0;
+}
+
+.photos .portfolio-item img {
+	transition: all 0.3s ease-in-out;
+}
+
+.photos .portfolio-item .portfolio-info {
+	opacity: 0;
 	position: absolute;
+	transition: all .3s linear;
+	text-align: center;
+	top: 10%;
 	left: 0;
 	right: 0;
-	top: 0;
-	bottom: 0;
-	transition: all ease-in-out 0.3s;
-	z-index: 2;
-	opacity: 0;
-}
-/*--------------------------------------------------------------
-# Playlist
---------------------------------------------------------------*/
-
-
-
-/*--------------------------------------------------------------
-# Q&A
---------------------------------------------------------------*/
-.spa ul {
-	list-style: none;
-	padding: 0;
 }
 
-.spa ul li {
-	padding-bottom: 10px;
+.photos .portfolio-item .portfolio-info h3 {
+	font-size: 22px;
 }
 
-.spa ul i {
-	font-size: 20px;
-	padding-right: 2px;
-	color: #149ddd;
+.photos .portfolio-item .portfolio-info h3 a {
+	color: #fff;
+	font-weight: bold;
 }
 
-.spa p:last-child {
-	margin-bottom: 0;
+.photos .portfolio-item .portfolio-info a i {
+	color: #70b9b0;
+	font-size: 24px;
 }
 
-/*--------------------------------------------------------------
-# Contact
---------------------------------------------------------------*/
-
-
-
-@-webkit-keyframes animate-loading {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+.photos .portfolio-item:hover img {
+	opacity: 0.4;
+	transform: scale(1.1);
 }
 
-@keyframes animate-loading {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+.photos .portfolio-item:hover .portfolio-info {
+	opacity: 1;
+	top: calc(50% - 30px);
 }
